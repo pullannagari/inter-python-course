@@ -41,7 +41,7 @@ class UserEncoder(JSONEncoder):
     def default(self, obj: Any) -> Any:
         if isinstance(obj, User):
             return {'name': obj.name, 'age': obj.age, obj.__class__.__name__: True}
-        return super().default(o)
+        return super().default(obj)
     
 userJson = UserEncoder().encode(user)
 print(userJson)
