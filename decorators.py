@@ -119,3 +119,11 @@ def say_hello_cd():
 
 say_hello_cd()
 say_hello_cd()
+
+# usecases of decorators
+# timer decorator for calculating the time taken for execution
+# debug decorator for printing more details of a function, args
+# check decorator to check the args
+# register functions like plugins
+# cache the information or
+# update the state
