@@ -1,24 +1,29 @@
 # easier and concise 
 # dynamically typed language (so variables can be reassigned to different types)
+print("******************************dynamically typed******************************")
 n = 0
 print('n= ', n)
 n = "abc"
 print('n= ', n)
 
+print("*****************************multiple assignments*****************************")
 # multiple assignments
 n, m  = 0, "abc"
 
+print("*********************************incrementing**********************************")
 # incrementing
 n = n + 1
 n += 1
 # cannot do n++
 
 # None is null (abscence of value)
+print("**************************************None***************************************")
 n = None
 print('n= ', n)
 n = 4
 print('n= ', n)
 
+print("*******************************if statements***********************************")
 # if statements don't need parantheses or curly braces
 # indentation is used
 n = 1
@@ -28,6 +33,7 @@ elif n == 1:
     n *= 2
 print('n= ', n)
 
+print("****************************multi-line conditions******************************")
 # paranthesis needed for multi-line conditions
 # and = &&
 # or = ||
@@ -40,6 +46,7 @@ if (n>0 or m > 0
     print('n= ', n)
 
 # while loop
+print("*******************************while loop**************************************")
 n = 0
 while n < 5:
     print('n= ', n)
@@ -48,6 +55,7 @@ while n < 5:
 # for loop using range
 # range produces a sequence of integers from 
 # start (inclusive) to stop (exclusive) by step
+print("*******************************for loop****************************************")
 for i in range(5):
     print(i)
 
@@ -60,6 +68,7 @@ for i in range(5, 1, -1):
     print(i)
 
 # division
+print("*******************************division****************************************")
 print(5/2) # gives floating result 2.5
 print(5//2) # gives int result 2 (floor)
 
@@ -72,6 +81,8 @@ print(int(-3/2)) # -1.5 will be converted to int and -1 will be the result
 # modding is similar to most languages, except for negative values
 print(10%3) # results 1
 print(-10%3) # results 2, expected is -1
+
+print("*****************************math library**************************************")
 # to work around, you need to use the math module
 import math
 print(math.fmod(-10, 3)) # modd according to c platform
@@ -83,6 +94,7 @@ print(math.sqrt(2))
 print(math.pow(2,3))
 
 # Max/Min Int
+print("******************************Max/Min Int**************************************")
 # python numbers are infinite, no overflowing
 inf = float("inf") # positive infinity
 ninf = float("-inf") # negative infinity
@@ -90,6 +102,7 @@ very_large_num = math.pow(2,300)
 if very_large_num < inf:
     print("infinity is ", inf)
 
+print("*********************************Lists*****************************************")
 # Arrays are called lists in python
 arr = [1, 2, 3]
 print(arr)
@@ -191,10 +204,11 @@ print(arr_sort_strings)
 arr = [i+i for i in range(5)]
 print(arr)
 
+# right way to create array of arrays
 arr_arr = [[0]*4 for i in range(4)]
 print(arr_arr)
 
-
+print("******************************Stings**************************************")
 # strings are similar to arrays
 s = "abc"
 print(s[0:2]) # prints ab
@@ -211,8 +225,8 @@ print(int("123")+1)
 print(str(123) + str(1))
 
 # to get an ascii value of a character, use ord()
-print(ord("a"))
-print(ord("A"))
+print("ascii of a", ord("a"))
+print("ascii of A",ord("A"))
 
 # joining a list of strings with a delimeter
 strings = ["ab", "cd", "ef"]
@@ -220,6 +234,7 @@ print("".join(strings)) # joining with empty string delimeter
 
 
 # Queues in python are double ended queues, hence name deque
+print("******************************double-ended-queue**************************************")
 from collections import deque
 
 queue = deque()
@@ -239,6 +254,7 @@ print(queue)
 
 
 # HashSet or set in python
+print("******************************dict and set*************************************")
 # search and insert elements in O(1) time
 # no duplicates
 seta = set()
@@ -295,6 +311,7 @@ for key, val in mapb.items(): # using unpacking
 
 
 # Tuples are like arrays but immutable
+print("******************************Tuples*************************************")
 # similar to lists, we use paranthesis instead of brackets
 tup = (1, 2, 3)
 print(tup)
@@ -314,6 +331,7 @@ print((1,2) in tup_set)
 
 
 # Heaps are used to find min, max of a set a values
+print("******************************Heaps heapq*************************************")
 # under the hood are arrays
 # by default the heap in python is min heap
 
@@ -350,6 +368,7 @@ while max_heap_init:
     print(heapq.heappop(max_heap_init))
 
 # functions
+print("******************************functions*************************************")
 def my_func(n, m):
     return n * m
 
@@ -388,6 +407,7 @@ double([1]*4, 3)
 
 
 # Class
+print("******************************class*************************************")
 # more concise, but limited
 class MyClass:
     # __init__ is the name constuctor
@@ -403,8 +423,3 @@ class MyClass:
     
     def get_double_length(self):
         return 2 * self.get_double_length()
-    
-
-
-        
-
