@@ -183,6 +183,7 @@ arr_sort_strings.sort()
 print(arr_sort_strings) # by default sorts in alphabetical order
 
 # to sort base on custom param(len for ex.)
+# to sort in desc add reverse=True param
 arr_sort_strings.sort(key=lambda x: len(x), reverse=True)
 print(arr_sort_strings)
 

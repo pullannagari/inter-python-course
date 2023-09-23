@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>python_coding_interview_tips API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>python_coding_interview_tips</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># easier and concise 
+# dynamically typed language (so variables can be reassigned to different types)
+n = 0
+print(&#39;n= &#39;, n)
+n = &#34;abc&#34;
+print(&#39;n= &#39;, n)
+
+# multiple assignments
+n, m  = 0, &#34;abc&#34;
+
+# incrementing
+n = n + 1
+n += 1
+# cannot do n++
+
+# None is null (abscence of value)
+n = None
+print(&#39;n= &#39;, n)
+n = 4
+print(&#39;n= &#39;, n)
+
+# if statements don&#39;t need parantheses or curly braces
+# indentation is used
+n = 1
+if n &gt; 2:
+    n -= 1
+elif n == 1:
+    n *= 2
+print(&#39;n= &#39;, n)
+
+# paranthesis needed for multi-line conditions
+# and = &amp;&amp;
+# or = ||
+n, m = 1, 2
+if n &gt; 0 and m &gt; 1:
+    print(&#39;n= &#39;, n)
+# multi-line
+if (n&gt;0 or m &gt; 0
+    and m &gt; n):
+    print(&#39;n= &#39;, n)
+
+# while loop
+n = 0
+while n &lt; 5:
+    print(&#39;n= &#39;, n)
+    n += 1
+
+# for loop using range
+# range produces a sequence of integers from 
+# start (inclusive) to stop (exclusive) by step
+for i in range(5):
+    print(i)
+
+for i in range(2, 5):
+    print(i)
+
+# for printing in reverse
+# 1 is not inclusive, so won&#39;t be printed
+for i in range(5, 1, -1):
+    print(i)
+
+# division
+print(5/2) # gives floating result 2.5
+print(5//2) # gives int result 2 (floor)
+
+# CAREFUL: most languages round towards 0 by default
+# python rounds to floor for negative numbes too
+print(-3//2) # gives -2 not -1 unlike other programming languages
+# to work around, you need to convert the result to integer
+print(int(-3/2)) # -1.5 will be converted to int and -1 will be the result
+
+# modding is similar to most languages, except for negative values
+print(10%3) # results 1
+print(-10%3) # results 2, expected is -1
+# to work around, you need to use the math module
+import math
+print(math.fmod(-10, 3)) # modd according to c platform
+
+#few math helpers
+print(math.floor(3 / 2))
+print(math.ceil(3 / 2))
+print(math.sqrt(2))
+print(math.pow(2,3))
+
+# Max/Min Int
+# python numbers are infinite, no overflowing
+inf = float(&#34;inf&#34;) # positive infinity
+ninf = float(&#34;-inf&#34;) # negative infinity
+very_large_num = math.pow(2,300)
+if very_large_num &lt; inf:
+    print(&#34;infinity is &#34;, inf)
+
+# Arrays are called lists in python
+arr = [1, 2, 3]
+print(arr)
+# lists are dynamic in python, 
+# they can be used as stacks
+arr.append(4)
+arr.append(5)
+print(arr)
+
+arr.pop()
+print(arr)
+
+# inserting into a specific index, linear time operation
+arr.insert(1, 7)
+# assignment is not linear time operation
+arr[1] = 5
+print(arr)
+
+# initializing arr of size n with default value of 1
+n = 5
+arr_ones = [1] * n
+print(arr_ones)
+print(len(arr_ones))
+# you can initialize with negative values too
+arr_nones = [-1] * n
+print(arr_nones)
+# you can initialize arr of arrays
+# CAREFUL: THE BELOW OPETATION WILL REPEAT THE SAME LIST 4 TIMES
+arr_arr  = [[-1]*4]*4 
+print(arr_arr)
+# MORE CONCISE WAY OF DOING THIS IS
+arr_arr = [[0]*4 for i in range(4)]
+print(arr_arr)
+
+# -1 index gives the last element
+# -2 index gives the penultimate element
+arr = [0, 1, 2, 3, 4, 5]
+print(arr[-1])
+print(arr[-2])
+
+# slicing the lists, most useful feature sin python
+print(arr[1:3]) # index 3 is exclusive
+print(arr[::-1]) # reverse of the array
+print(arr[4:2:-1]) # index 4 and 3
+print(arr[4:2:-2]) # index 4
+
+# unpacking
+# number of variables match the elements in the list 
+a, b, c = [1, 2, 3]
+print(a, b, c)
+# super useful when we want to go over a list of pairs
+a, b, c = [(1,2), (2,4), (-3,3)]
+print(a, b, c)
+
+# loop throught the arrays
+# using index
+for i in range(len(arr)):
+    print(i)
+
+# without index
+for num in arr:
+    print(num)
+
+# with enumerate function
+for i, n in enumerate(arr):
+    print(i, n)
+
+# looping through multiple arrays simultaneously
+arr_1 = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;]
+arr_2 = [1,2,3,4,5]
+# zip combines them in pairs, unpack 
+for a1, a2, a3 in zip(arr_1, arr_2, range(11,15)): 
+    print(a1, a2, a3) # doesn&#39;t print 5 or 15, picks the shortest arr as max
+
+
+# reverse an array
+arr_1.reverse()
+print(arr_1) # reverses the actual array in-place
+print(arr_2[::-1]) # doesn&#39;t change the actual array
+
+# sorting an array
+arr_sort = [5, 4, 2, 7, 9, 8]
+arr_sort.sort() # sorts the actual array, in ascending order by default
+print(arr_sort)
+arr_sort.sort(reverse=True) # sort in descending order
+print(arr_sort)
+
+# we can sort the list of stirings too
+arr_sort_strings = [&#34;danny&#34;, &#34;boddy&#34;, &#34;grit&#34;, &#34;len&#34;, &#34;mars&#34;, &#34;alice&#34;]
+arr_sort_strings.sort()
+print(arr_sort_strings) # by default sorts in alphabetical order
+
+# to sort base on custom param(len for ex.)
+# to sort in desc add reverse=True param
+arr_sort_strings.sort(key=lambda x: len(x), reverse=True)
+print(arr_sort_strings)
+
+# list comprehension
+arr = [i+i for i in range(5)]
+print(arr)
+
+arr_arr = [[0]*4 for i in range(4)]
+print(arr_arr)
+
+
+# strings are similar to arrays
+s = &#34;abc&#34;
+print(s[0:2]) # prints ab
+
+# but they are immutable
+# so the below will create a new string
+# any string update operation is O(N) time operation
+s += &#34;def&#34;
+print(s)
+
+# valid numeric strings can be converted
+print(int(&#34;123&#34;)+1)
+# and numbers can be converted to strings
+print(str(123) + str(1))
+
+# to get an ascii value of a character, use ord()
+print(ord(&#34;a&#34;))
+print(ord(&#34;A&#34;))
+
+# joining a list of strings with a delimeter
+strings = [&#34;ab&#34;, &#34;cd&#34;, &#34;ef&#34;]
+print(&#34;&#34;.join(strings)) # joining with empty string delimeter
+
+
+# Queues in python are double ended queues, hence name deque
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(2) # O(1) time
+queue.append(3)
+print(queue)
+
+queue.popleft() # O(1) time
+print(queue)
+
+queue.appendleft(1) # O(1) time
+print(queue)
+
+queue.pop() # O(1) time
+print(queue)
+
+
+# HashSet or set in python
+# search and insert elements in O(1) time
+# no duplicates
+seta = set()
+
+seta.add(1)
+seta.add(2)
+seta.add(1)
+print(seta)
+print(len(seta))
+print(1 in seta) # check if key exists using in
+print(3 in seta)
+
+seta.remove(1) # O(1) time
+print(1 in seta)
+
+# list to set
+print(set([1, 2, 3, 3]))
+# set comprehension
+setb = {i for i in range(5)}
+print(setb)
+
+
+# hashmap or dict in python
+# key value pair, no duplicate keys
+mapa = {}
+mapa[&#34;alice&#34;] = 88
+mapa[&#34;bob&#34;] = 77
+mapa[&#34;cat&#34;] = 70
+print(mapa)
+print(len(mapa)) # prints number of keys
+mapa[&#34;alice&#34;] = 80 # reassignment/modification
+print(&#34;alice&#34; in mapa) # check if key exists
+mapa.pop(&#34;alice&#34;) # pop the key, value pair matching key
+print(&#34;alice&#34; in mapa)
+# another way to delete the key, value
+print(&#34;bob&#34; in mapa)
+del mapa[&#34;bob&#34;]
+print(&#34;bob&#34; in mapa)
+
+mapb = {&#34;alice&#34;: 1, &#34;bob&#34;: 2} # another way of creating map
+print(mapb)
+
+# dict comprehension
+map_comp = {i : 2*i for i in range(3)} # useful to create graph adjacency list
+print(map_comp)
+for key in mapb:
+    print(key, mapb[key])
+
+for val in map_comp.values(): # directly iterate through values
+    print(val)
+
+for key, val in mapb.items(): # using unpacking
+    print(key, val)
+
+
+# Tuples are like arrays but immutable
+# similar to lists, we use paranthesis instead of brackets
+tup = (1, 2, 3)
+print(tup)
+print(tup[0])
+print(tup[-1])
+# can&#39;t modify
+# tup[0] = 0
+
+# you&#39;ll mostly use tuples as keys to hash maps or hash set in interviews
+tup_map = { (1,2): &#34;three&#34;}
+print(tup_map[(1,2)])
+
+tup_set = set()
+tup_set.add((1,2))
+# lists are not hashable, so can&#39;t be used as keys, so we use tuples
+print((1,2) in tup_set) 
+
+
+# Heaps are used to find min, max of a set a values
+# under the hood are arrays
+# by default the heap in python is min heap
+
+import heapq
+
+minhp = []
+heapq.heappush(minhp, 3)
+heapq.heappush(minhp, 2)
+heapq.heappush(minhp, 5)
+heapq.heappush(minhp, 1)
+# minimum value is always at index 0
+print(minhp[0])
+
+while len(minhp):
+    print(heapq.heappop(minhp))
+
+# no max heap in python
+# workaround is to use min heap and mutiply by -1 when push &amp; pop
+maxhp = []
+heapq.heappush(maxhp, -3)
+heapq.heappush(maxhp, -2)
+heapq.heappush(maxhp, -5)
+heapq.heappush(maxhp, -1)
+# max value then is
+print(-1 * maxhp[0])
+
+while len(maxhp):
+    print(-1 * heapq.heappop(maxhp))
+
+# build heap from initial values
+max_heap_init = [2, 1, 8, 4, 5]
+heapq.heapify(max_heap_init)
+while max_heap_init:
+    print(heapq.heappop(max_heap_init))
+
+# functions
+def my_func(n, m):
+    return n * m
+
+print(my_func(8, 8))
+# nested functions are most useful in coding interviews
+# very helpful in recursive functions
+def outer(a, b):
+    c = 30
+
+    def inner():
+        # access to a, b, c without passing them to inner func
+            return a + b + c
+    
+    return inner()
+    
+print(outer(10, 20))
+
+# nested functions can modify objects, but not reassign values
+# unless using nonlocal keyword
+def double(arr, val):
+    def helper():
+        # modifying array works, updated the original array
+        for i , n in enumerate(arr):
+            arr[i] *= 2
+        # will only modify val inside helper scope
+        # val *= 2
+
+        # to update the in outside helper scope
+        nonlocal val
+        val *= 2
+    helper()
+    print(arr)
+    print(val)
+
+double([1]*4, 3)
+
+
+# Class
+# more concise, but limited
+class MyClass:
+    # __init__ is the name constuctor
+    def __init__(self, nums) -&gt; None:
+        # self is like this keyword in other languages
+        # to create member variables we can use self.var_name
+        self.nums = nums
+        self.size = len(nums)
+
+    # self needs to be passed to evey member function of the class
+    def get_length(self):
+        return self.size
+    
+    def get_double_length(self):
+        return 2 * self.get_double_length()
+    
+
+
+        </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="python_coding_interview_tips.double"><code class="name flex">
+<span>def <span class="ident">double</span></span>(<span>arr, val)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def double(arr, val):
+    def helper():
+        # modifying array works, updated the original array
+        for i , n in enumerate(arr):
+            arr[i] *= 2
+        # will only modify val inside helper scope
+        # val *= 2
+
+        # to update the in outside helper scope
+        nonlocal val
+        val *= 2
+    helper()
+    print(arr)
+    print(val)</code></pre>
+</details>
+</dd>
+<dt id="python_coding_interview_tips.my_func"><code class="name flex">
+<span>def <span class="ident">my_func</span></span>(<span>n, m)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def my_func(n, m):
+    return n * m</code></pre>
+</details>
+</dd>
+<dt id="python_coding_interview_tips.outer"><code class="name flex">
+<span>def <span class="ident">outer</span></span>(<span>a, b)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def outer(a, b):
+    c = 30
+
+    def inner():
+        # access to a, b, c without passing them to inner func
+            return a + b + c
+    
+    return inner()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="python_coding_interview_tips.MyClass"><code class="flex name class">
+<span>class <span class="ident">MyClass</span></span>
+<span>(</span><span>nums)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MyClass:
+    # __init__ is the name constuctor
+    def __init__(self, nums) -&gt; None:
+        # self is like this keyword in other languages
+        # to create member variables we can use self.var_name
+        self.nums = nums
+        self.size = len(nums)
+
+    # self needs to be passed to evey member function of the class
+    def get_length(self):
+        return self.size
+    
+    def get_double_length(self):
+        return 2 * self.get_double_length()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="python_coding_interview_tips.MyClass.get_double_length"><code class="name flex">
+<span>def <span class="ident">get_double_length</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_double_length(self):
+    return 2 * self.get_double_length()</code></pre>
+</details>
+</dd>
+<dt id="python_coding_interview_tips.MyClass.get_length"><code class="name flex">
+<span>def <span class="ident">get_length</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_length(self):
+    return self.size</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="python_coding_interview_tips.double" href="#python_coding_interview_tips.double">double</a></code></li>
+<li><code><a title="python_coding_interview_tips.my_func" href="#python_coding_interview_tips.my_func">my_func</a></code></li>
+<li><code><a title="python_coding_interview_tips.outer" href="#python_coding_interview_tips.outer">outer</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="python_coding_interview_tips.MyClass" href="#python_coding_interview_tips.MyClass">MyClass</a></code></h4>
+<ul class="">
+<li><code><a title="python_coding_interview_tips.MyClass.get_double_length" href="#python_coding_interview_tips.MyClass.get_double_length">get_double_length</a></code></li>
+<li><code><a title="python_coding_interview_tips.MyClass.get_length" href="#python_coding_interview_tips.MyClass.get_length">get_length</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
