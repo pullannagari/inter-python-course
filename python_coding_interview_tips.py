@@ -192,3 +192,218 @@ print(arr)
 
 arr_arr = [[0]*4 for i in range(4)]
 print(arr_arr)
+
+
+# strings are similar to arrays
+s = "abc"
+print(s[0:2]) # prints ab
+
+# but they are immutable
+# so the below will create a new string
+# any string update operation is O(N) time operation
+s += "def"
+print(s)
+
+# valid numeric strings can be converted
+print(int("123")+1)
+# and numbers can be converted to strings
+print(str(123) + str(1))
+
+# to get an ascii value of a character, use ord()
+print(ord("a"))
+print(ord("A"))
+
+# joining a list of strings with a delimeter
+strings = ["ab", "cd", "ef"]
+print("".join(strings)) # joining with empty string delimeter
+
+
+# Queues in python are double ended queues, hence name deque
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(2) # O(1) time
+queue.append(3)
+print(queue)
+
+queue.popleft() # O(1) time
+print(queue)
+
+queue.appendleft(1) # O(1) time
+print(queue)
+
+queue.pop() # O(1) time
+print(queue)
+
+
+# HashSet or set in python
+# search and insert elements in O(1) time
+# no duplicates
+seta = set()
+
+seta.add(1)
+seta.add(2)
+seta.add(1)
+print(seta)
+print(len(seta))
+print(1 in seta) # check if key exists using in
+print(3 in seta)
+
+seta.remove(1) # O(1) time
+print(1 in seta)
+
+# list to set
+print(set([1, 2, 3, 3]))
+# set comprehension
+setb = {i for i in range(5)}
+print(setb)
+
+
+# hashmap or dict in python
+# key value pair, no duplicate keys
+mapa = {}
+mapa["alice"] = 88
+mapa["bob"] = 77
+mapa["cat"] = 70
+print(mapa)
+print(len(mapa)) # prints number of keys
+mapa["alice"] = 80 # reassignment/modification
+print("alice" in mapa) # check if key exists
+mapa.pop("alice") # pop the key, value pair matching key
+print("alice" in mapa)
+# another way to delete the key, value
+print("bob" in mapa)
+del mapa["bob"]
+print("bob" in mapa)
+
+mapb = {"alice": 1, "bob": 2} # another way of creating map
+print(mapb)
+
+# dict comprehension
+map_comp = {i : 2*i for i in range(3)} # useful to create graph adjacency list
+print(map_comp)
+for key in mapb:
+    print(key, mapb[key])
+
+for val in map_comp.values(): # directly iterate through values
+    print(val)
+
+for key, val in mapb.items(): # using unpacking
+    print(key, val)
+
+
+# Tuples are like arrays but immutable
+# similar to lists, we use paranthesis instead of brackets
+tup = (1, 2, 3)
+print(tup)
+print(tup[0])
+print(tup[-1])
+# can't modify
+# tup[0] = 0
+
+# you'll mostly use tuples as keys to hash maps or hash set in interviews
+tup_map = { (1,2): "three"}
+print(tup_map[(1,2)])
+
+tup_set = set()
+tup_set.add((1,2))
+# lists are not hashable, so can't be used as keys, so we use tuples
+print((1,2) in tup_set) 
+
+
+# Heaps are used to find min, max of a set a values
+# under the hood are arrays
+# by default the heap in python is min heap
+
+import heapq
+
+minhp = []
+heapq.heappush(minhp, 3)
+heapq.heappush(minhp, 2)
+heapq.heappush(minhp, 5)
+heapq.heappush(minhp, 1)
+# minimum value is always at index 0
+print(minhp[0])
+
+while len(minhp):
+    print(heapq.heappop(minhp))
+
+# no max heap in python
+# workaround is to use min heap and mutiply by -1 when push & pop
+maxhp = []
+heapq.heappush(maxhp, -3)
+heapq.heappush(maxhp, -2)
+heapq.heappush(maxhp, -5)
+heapq.heappush(maxhp, -1)
+# max value then is
+print(-1 * maxhp[0])
+
+while len(maxhp):
+    print(-1 * heapq.heappop(maxhp))
+
+# build heap from initial values
+max_heap_init = [2, 1, 8, 4, 5]
+heapq.heapify(max_heap_init)
+while max_heap_init:
+    print(heapq.heappop(max_heap_init))
+
+# functions
+def my_func(n, m):
+    return n * m
+
+print(my_func(8, 8))
+# nested functions are most useful in coding interviews
+# very helpful in recursive functions
+def outer(a, b):
+    c = 30
+
+    def inner():
+        # access to a, b, c without passing them to inner func
+            return a + b + c
+    
+    return inner()
+    
+print(outer(10, 20))
+
+# nested functions can modify objects, but not reassign values
+# unless using nonlocal keyword
+def double(arr, val):
+    def helper():
+        # modifying array works, updated the original array
+        for i , n in enumerate(arr):
+            arr[i] *= 2
+        # will only modify val inside helper scope
+        # val *= 2
+
+        # to update the in outside helper scope
+        nonlocal val
+        val *= 2
+    helper()
+    print(arr)
+    print(val)
+
+double([1]*4, 3)
+
+
+# Class
+# more concise, but limited
+class MyClass:
+    # __init__ is the name constuctor
+    def __init__(self, nums) -> None:
+        # self is like this keyword in other languages
+        # to create member variables we can use self.var_name
+        self.nums = nums
+        self.size = len(nums)
+
+    # self needs to be passed to evey member function of the class
+    def get_length(self):
+        return self.size
+    
+    def get_double_length(self):
+        return 2 * self.get_double_length()
+    
+
+
+        
+
